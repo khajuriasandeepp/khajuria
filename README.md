@@ -53,7 +53,7 @@ A centralized, scrollable "Mainframe" housing core automation and defense tools:
 
 ### Frontend Setup
 ```bash
-git clone [https://github.com/warloccarlos/portfolio.git](https://github.com/warloccarlos/portfolio.git)
-cd portfolio/frontend
+git clone [https://github.com/khajuriasandeepp/khajuria.git](https://github.com/khajuriasandeepp/khajuria.git)
+cd khajuria/khajuria
 npm install
 npm run dev -- --force
