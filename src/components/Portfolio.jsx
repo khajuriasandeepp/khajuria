@@ -23,7 +23,8 @@ const Portfolio = () => {
     if (!domain) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/scan?domain=${domain}`);
+      const res = await fetch(`https://khajuriasandeepp.pythonanywhere.com/api/scan?domain=${domain}`);
+      if (!res.ok) throw new Error('Network response was not ok');
       const data = await res.json();
       setScanResult(data);
     } catch (err) {
