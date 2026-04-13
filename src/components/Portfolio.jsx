@@ -87,7 +87,7 @@ const Portfolio = () => {
               </div>
               
               <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">
-                Sandeep<br /><span className="text-red-600">Khajuria</span>
+                Sandeep&nbsp;<span className="text-red-600">Khajuria</span>
               </h1>
               
               <div className="mt-8 min-h-[120px] bg-black/40 p-4 rounded border border-slate-800/50">
@@ -102,13 +102,32 @@ const Portfolio = () => {
             </div>
           </div>
 
+          {/* NEW: SYSTEM ROLES DIV */}
+          <div className="bg-[#0d1117] border border-slate-800 p-6 rounded-xl relative overflow-hidden">
+            <h3 className="text-white text-[8px] font-bold uppercase mb-4 tracking-widest text-slate-500 flex items-center gap-2">
+              <Lock size={14} /> Active_System_Roles
+            </h3>
+            <div className="space-y-2">
+              {[
+                { role: "Cyber Security Professional", desc: "Threat Hunting & Infrastructure Hardening" },
+                { role: "Full-Stack Web Developer", desc: "High-Performance Secure Application Design" },
+                { role: "Cyber Security Trainer", desc: "Mentoring & Technical Skill Transmission" }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-black/40 border-l-2 border-blue-600 p-2 hover:bg-blue-600/5 transition group">
+                  <p className="text-[11px] font-bold text-white group-hover:text-blue-400 transition">{item.role}</p>
+                  <p className="text-[9px] text-slate-500 mt-1 uppercase tracking-tighter">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* TECH STACK BENTO */}
           <div className="bg-[#0d1117] border border-slate-800 p-6 rounded-xl">
             <h3 className="text-white text-[10px] font-bold uppercase mb-4 flex items-center gap-2">
               <Cpu size={14} className="text-blue-500" /> Weaponry & Tools
             </h3>
             <div className="grid grid-cols-2 gap-2">
-              {["Python", "Linux (10y+)", "FastAPI", "React", "ISO 27001", "Bash", "PostgreSQL", "Network Security"].map(tool => (
+              {["Pen Testing", "Kali Linux/Linux (10y+)", "Flask", "React", "ISO 27001", "Python", "Bash", "Application Security","Network Security", "Training"].map(tool => (
                 <div key={tool} className="bg-black/40 border border-slate-800 p-2 text-[10px] rounded hover:border-blue-500/50 transition cursor-default">
                   {tool}
                 </div>
