@@ -20,26 +20,25 @@ const Portfolio = () => {
   }, []);
 
   const runScan = async (domain) => {
-    const runScan = async (domain) => {
-  if (!domain) return;
-  setLoading(true);
-  try {
-    // 1. Update the URL to your live PythonAnywhere link
-    const res = await fetch(`https://khajuriasandeepp.pythonanywhere.com/api/scan?domain=${domain}`);
-    
-    if (!res.ok) throw new Error('API_REJECTED');
+    if (!domain) return;
+    setLoading(true);
+    try {
+      // 1. Update the URL to your live PythonAnywhere link
+      const res = await fetch(`https://khajuriasandeepp.pythonanywhere.com/api/scan?domain=${domain}`);
+      
+      if (!res.ok) throw new Error('API_REJECTED');
 
-    const data = await res.json();
-    setScanResult(data);
-  } catch (err) {
-    // 2. Update the error message to reflect your live environment
-    setScanResult({ 
-      error: "NODE_OFFLINE", 
-      message: "Remote Security Node (PythonAnywhere) is not responding. Check CORS or Server Status." 
-    });
-  }
-  setLoading(false);
-};
+      const data = await res.json();
+      setScanResult(data);
+    } catch (err) {
+      // 2. Update the error message to reflect your live environment
+      setScanResult({ 
+        error: "NODE_OFFLINE", 
+        message: "Remote Security Node (PythonAnywhere) is not responding. Check CORS or Server Status." 
+      });
+    }
+    setLoading(false);
+  };
 
   const projects = [
     {
