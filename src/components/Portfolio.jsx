@@ -125,7 +125,7 @@ const Portfolio = () => {
             </div>
             <div className="p-8">
               <Fingerprint size={32} className="text-red-600" />
-              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">
+              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none" style={{ fontFamily: "'CyberFont', sans-serif" }}>
                 Sandeep&nbsp;<span className="text-red-600">Khajuria</span>
               </h1>
               <div className="mt-8 min-h-[140px] bg-black/40 p-4 rounded border border-slate-800/50 relative">
@@ -165,7 +165,7 @@ const Portfolio = () => {
               <Cpu size={14} className="text-blue-500" /> Weaponry_v2.0
             </h3>
             <div className="grid grid-cols-2 gap-2">
-              {["Pen Testing", "App Security", "DevSecOps", "ISO 27001", "Web Development", "Kali Linux", "Scripting", "Trainer"].map(tool => (
+              {["Pen Testing", "App Security", "DevSecOps", "ISO 27001", "Web Development", "Kali Linux", "Scripting", "BASH"].map(tool => (
                 <div key={tool} className="bg-black/40 border border-slate-800 p-2 text-[10px] rounded hover:border-blue-500/50 transition cursor-default">
                   {tool}
                 </div>

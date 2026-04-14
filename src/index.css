@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'CyberFont'; 
+  src: url('./assets/fonts/BlackOpsOne-Regular.ttf');
+}
