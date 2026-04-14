@@ -1,5 +1,34 @@
+
 import React, { useState, useEffect } from 'react';
 import { Shield, Terminal, Activity, Search, ExternalLink, Cpu, Database, Server, Lock, Code2, AlertTriangle, Radio, Fingerprint } from 'lucide-react';
+
+const DecryptText = ({ text, isVisible }) => {
+  const [display, setDisplay] = useState('');
+  const chars = '!@#$%^&*()_+NIC-762/<>?';
+
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    let iterations = 0;
+    const interval = setInterval(() => {
+      setDisplay(
+        text.split('')
+          .map((char, index) => {
+            if (index < iterations) return text[index];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join('')
+      );
+
+      if (iterations >= text.length) clearInterval(interval);
+      iterations += 1/2; // Adjust speed of decryption here
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, [isVisible, text]);
+
+  return <span>{display || '********'}</span>;
+};
 
 const Portfolio = () => {
   const [scanResult, setScanResult] = useState(null);
@@ -184,28 +213,37 @@ const Portfolio = () => {
             </div>
             <div className="overflow-y-auto scrollbar-hide bg-black">
               {projects.map((p, i) => (
-                <div 
-                  key={i} 
-                  className={`group p-6 border-b border-slate-900 transition-all duration-700 transform 
-                    ${visibleRepos.includes(i) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
-                >
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <span className="text-[8px] text-blue-500 font-bold uppercase tracking-widest">
-                        {visibleRepos.includes(i) ? '[ DECRYPTED ]' : '[ ACCESSING... ]'}
-                      </span>
-                      <h4 className="text-white font-bold text-lg group-hover:text-blue-400 transition">{p.title}</h4>
-                    </div>
-                    <a href={p.link} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-white p-2 bg-slate-900 rounded transition"><ExternalLink size={16} /></a>
-                  </div>
-                  <p className="text-xs text-slate-500 leading-relaxed mb-4">{p.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] text-slate-600 font-bold flex items-center gap-1"><Cpu size={10} /> {p.tech}</span>
-                    <div className="h-[1px] flex-grow mx-4 bg-gradient from-transparent via-slate-800 to-transparent"></div>
-                    <div className="text-[8px] text-slate-800 font-mono">PTR_0x{i}AF</div>
-                  </div>
-                </div>
-              ))}
+  <div 
+    key={i} 
+    className={`group p-6 border-b border-slate-900 transition-all duration-1000 transform 
+      ${visibleRepos.includes(i) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+  >
+    <div className="flex justify-between items-start mb-2">
+      <div>
+        <span className="text-[8px] text-blue-500 font-bold uppercase tracking-widest mb-1 block">
+          {visibleRepos.includes(i) ? '[ DECRYPTED ]' : '[ ENCRYPTED_BLOCK ]'}
+        </span>
+        
+        {/* UPDATED TITLE WITH DECRYPTING LOGIC */}
+        <h4 className="text-white font-bold text-lg group-hover:text-blue-400 transition font-mono">
+          <DecryptText text={p.title} isVisible={visibleRepos.includes(i)} />
+        </h4>
+      </div>
+      
+      <a href={p.link} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-white p-2 bg-slate-900 rounded transition">
+        <ExternalLink size={16} />
+      </a>
+    </div>
+
+    {/* The rest of your card content (Description, Tech, etc.) stays the same */}
+    <p className="text-xs text-slate-500 leading-relaxed mb-4">{p.description}</p>
+    <div className="flex items-center justify-between">
+       <span className="text-[10px] text-slate-600 font-bold flex items-center gap-1"><Cpu size={10} /> {p.tech}</span>
+       <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+       <div className="text-[8px] text-slate-800 font-mono">PTR_0x{i}AF</div>
+    </div>
+  </div>
+))}
             </div>
           </section>
         </main>
