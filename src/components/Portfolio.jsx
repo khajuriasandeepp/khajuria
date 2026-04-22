@@ -59,7 +59,7 @@ const Portfolio = () => {
       tag: "APP_HARDENING",
       description: "API-driven database used to mitigate Sybil attacks by blacklisting temporary email providers.",
       tech: "Python / SecOps",
-      link: "http://warloccarlos.pythonanywhere.com/"
+      link: "https://epapi.pythonanywhere.com/"
     },
     {
       title: "PyExpense Ledger",
