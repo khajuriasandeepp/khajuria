@@ -1,59 +1,29 @@
-# 🛡️ Project: Security Operations Dashboard (v1.0.4)
-**Author:** Sandeep Khajuria // ISO 27001 Lead Auditor & Security Analyst
+# Sandeep Khajuria portfolio
 
----
+Personal portfolio for Sandeep Khajuria. The frontend is React and Vite, with Tailwind CSS. It highlights application security, DevSecOps, ISO 27001 lead auditing, Linux experience, selected projects, and a downloadable resume.
 
-## 🖥️ System Overview
-A high-performance, security-focused portfolio dashboard built with **React**, **Tailwind 4**, and **FastAPI**. This project serves as a live demonstration of automated threat-hunting capabilities, technical hardening, and adherence to Information Security Management Systems (ISMS).
+## Run locally
 
-> **Status:** ACTIVE_MONITORING
-> **Node:** v24.14.1
-> **Security Baseline:** ISO 27001:2022 Compliant
-
----
-
-## 🚀 Key Features
-
-### 1. Active Security Probe (FastAPI Backend)
-A live utility that performs real-time security header audits on target domains. 
-- **Functionality:** Analyzes `X-Frame-Options`, `Content-Security-Policy`, and `HSTS` headers.
-- **Tech:** Python, FastAPI, Uvicorn.
-
-### 2. Terminal-Style Bento Interface
-A custom UI designed to mimic a **Security Operations Center (SOC)** dashboard.
-- **Typewriter Effect:** Automated dossier readout on system boot.
-- **Bento Architecture:** Modular layout optimized for high-density information display.
-- **Responsive Design:** Hardened for mobile and desktop viewing.
-
-### 3. Technical Repository Dossier
-A centralized, scrollable "Mainframe" housing core automation and defense tools:
-- **SharvaPrime Engine:** High-concurrency Python orchestration.
-- **Network Monitor:** Anomaly detection and latency alerting.
-- **Mail Shield:** Sybil attack mitigation via API-driven blacklisting.
-
----
-
-## 🛠️ Technical Weaponry (Tech Stack)
-
-| Category | Tools |
-| :--- | :--- |
-| **Core Languages** | Python (Expert), JavaScript (React), Bash Scripting |
-| **Security & Audit** | ISO 27001:2022 LA, ISMS Implementation, Risk Assessment |
-| **Systems** | Linux (10+ Years - Debian/RHEL/Arch), Docker, Git |
-| **Web Infrastructure** | FastAPI, Django, Tailwind 4, Vite |
-
----
-
-## 📦 Local Installation & Deployment
-
-### Prerequisites
-- Node.js (v18+)
-- Python 3.10+
-- Git
-
-### Frontend Setup
 ```bash
-git clone [https://github.com/khajuriasandeepp/khajuria.git](https://github.com/khajuriasandeepp/khajuria.git)
-cd khajuria/khajuria
-npm install
-npm run dev -- --force
+npm ci
+npm run dev
+```
+
+Open the local address printed by Vite. For checks and production output:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Deploy to GitHub Pages
+
+The existing workflow in `.github/workflows/main.yml` builds and publishes the site. The Vite base path in `vite.config.js` is `/khajuria`, matching the current repository path. Push the changed files to the repository's publishing branch and check the workflow result. The resume PDF is stored in `public/` so Vite copies it into the published site.
+
+## Domain check demo
+
+The optional demo calls `https://khajuriasandeepp.pythonanywhere.com/api/scan`. That backend is not included in this repository. Its availability, behavior, and CORS configuration must be checked independently. The demo is not a penetration test. Use only authorized domains.
+
+## Personal information
+
+Contact links point to `sandykhajuria@gmail.com`. Review the project links and resume before publishing updates. The resume PDF can be replaced at `public/Sandeep_Khajuria_Resume.pdf`.
