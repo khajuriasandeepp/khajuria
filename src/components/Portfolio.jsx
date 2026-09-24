@@ -66,7 +66,7 @@ const Portfolio = () => {
     <div className="bg-[#010409] text-slate-300 min-h-screen font-mono p-4 md:p-8 selection:bg-blue-500/30">
       <a className="sr-only focus:not-sr-only focus:text-white" href="#main-content">Skip to content</a>
       <header className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
-        <a href="#main-content" className="text-white text-xl font-bold tracking-tight">Sandeep<span className="text-red-500">.</span></a>
+        <a href="#main-content" className="text-white text-xl font-bold tracking-tight">Sandeep Khajuria</a>
         <nav aria-label="Main navigation" className="flex flex-wrap gap-5 text-xs text-slate-300">
           <a href="#experience" className="hover:text-white">Experience</a><a href="#projects" className="hover:text-white">Projects</a><a href="#contact" className="hover:text-white">Contact</a>
         </nav>
