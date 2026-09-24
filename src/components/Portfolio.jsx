@@ -76,8 +76,8 @@ const Portfolio = () => {
         <h2 className="mt-3 mb-4 text-3xl md:text-5xl font-bold text-white leading-tight">Security judgment, backed by engineering experience.</h2>
         <p className="max-w-3xl text-sm md:text-base text-slate-300 leading-relaxed">I’m Sandeep Khajuria. For over 11 years I’ve assessed applications, investigated real-world exposure, worked with developers on fixes, and improved how teams build and release software. I’m a certified ISO 27001 Lead Auditor and have used Linux extensively throughout my work.</p>
         <div className="flex flex-wrap gap-3 mt-6">
-          <a className="bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-sm px-5 py-3 rounded" href="mailto:sandykhajuria@gmail.com?subject=Opportunity%20for%20Sandeep%20Khajuria">Email me</a>
-          <a className="border border-slate-600 hover:border-blue-400 text-white font-bold text-sm px-5 py-3 rounded" href={`${import.meta.env.BASE_URL}Sandeep_Khajuria_Resume.pdf`} download>Download resume</a>
+          <a className="bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-sm px-5 py-3 rounded" href="mailto:khajuriasandeepp@gmail.com?subject=Opportunity%20for%20Sandeep%20Khajuria">Email me</a>
+          <a className="border border-slate-600 hover:border-blue-400 text-white font-bold text-sm px-5 py-3 rounded" href={`${import.meta.env.BASE_URL}/Sandeep_Khajuria_Resume.pdf`} download>Download resume</a>
           <a className="border border-slate-600 hover:border-blue-400 text-white font-bold text-sm px-5 py-3 rounded" href="https://github.com/warloccarlos" target="_blank" rel="noopener noreferrer">GitHub profile</a>
         </div>
       </section>
@@ -231,7 +231,7 @@ const Portfolio = () => {
       <footer id="contact" className="max-w-6xl mx-auto mt-12 border-t border-slate-800 py-10">
          <h2 className="text-white text-2xl font-bold mb-3">Let’s talk about your opportunity.</h2>
          <p className="text-slate-400 text-sm mb-4">Cybersecurity, application security and DevSecOps leadership.</p>
-         <a href="mailto:sandykhajuria@gmail.com" className="text-blue-400 hover:text-blue-300">sandykhajuria@gmail.com</a>
+         <a href="mailto:khajuriasandeepp@gmail.com" className="text-blue-400 hover:text-blue-300">khajuriasandeepp@gmail.com</a>
       </footer>
     </div>
   );
